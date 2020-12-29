@@ -1,17 +1,16 @@
+import { FETCH_GAMES } from "../../constants/index";
+
 const initialState = {
-    popular :[],
-}
+  popular: []
+};
 
+const gamesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_GAMES:
+      return { ...state, popular: action.payload.popular };
+    default:
+      return { ...state };
+  }
+};
 
-const gamesReducer =(state=initialState, action) =>{
-
-    switch(action.type){
-        case 'FETCH_GAMES':
-            return {...state}
-        default:
-            return {...state}
-    }
-
-}
-
-export default gamesReducer
+export default gamesReducer;
